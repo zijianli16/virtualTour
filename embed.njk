@@ -1,88 +1,78 @@
-
 <link rel="stylesheet" href="vendor/reset.min.css">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{path}}style.css">
 
-<div class="multiple-scenes">
+    <div class="multiple-scenes">
 
-<div id="pano"></div>
+        <div id="pano"></div>
 
-<div id="sceneList">
-  <ul class="scenes">
-    
-      <a href="javascript:void(0)" class="scene" data-id="0-room01_dirts">
-        <li class="text">Room01_Dirts</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="1-room01_samples">
-        <li class="text">Room01_Samples</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-room01_sink">
-        <li class="text">Room01_Sink</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="3-room02_operationside">
-        <li class="text">Room02_operationSide</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="4-room02_rightside">
-        <li class="text">Room02_rightSide</li>
-      </a>
-    
-  </ul>
-</div>
+        <div id="sceneList">
+            <ul class="scenes">
 
-<div id="titleBar">
-  <h1 class="sceneName"></h1>
-</div>
+                <a href="javascript:void(0)" class="scene" data-id="0-room01_dirts">
+                    <li class="text">Room01_Dirts</li>
+                </a>
 
-<a href="javascript:void(0)" id="autorotateToggle">
-  <img class="icon off" src="img/play.png">
-  <img class="icon on" src="img/pause.png">
-</a>
+                <a href="javascript:void(0)" class="scene" data-id="1-room01_samples">
+                    <li class="text">Room01_Samples</li>
+                </a>
 
-<a href="javascript:void(0)" id="fullscreenToggle">
-  <img class="icon off" src="img/fullscreen.png">
-  <img class="icon on" src="img/windowed.png">
-</a>
+                <a href="javascript:void(0)" class="scene" data-id="2-room01_sink">
+                    <li class="text">Room01_Sink</li>
+                </a>
 
-<a href="javascript:void(0)" id="sceneListToggle">
-  <img class="icon off" src="img/expand.png">
-  <img class="icon on" src="img/collapse.png">
-</a>
+                <a href="javascript:void(0)" class="scene" data-id="3-room02_operationside">
+                    <li class="text">Room02_operationSide</li>
+                </a>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
-  <img class="icon" src="img/up.png">
-</a>
-<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
-  <img class="icon" src="img/down.png">
-</a>
-<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  <img class="icon" src="img/left.png">
-</a>
-<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
-  <img class="icon" src="img/right.png">
-</a>
-<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
-  <img class="icon" src="img/plus.png">
-</a>
-<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
-  <img class="icon" src="img/minus.png">
-</a>
+                <a href="javascript:void(0)" class="scene" data-id="4-room02_rightside">
+                    <li class="text">Room02_rightSide</li>
+                </a>
 
-</div>
+            </ul>
+        </div>
 
-<script src="vendor/bowser.min.js" ></script>
-<script src="vendor/es5-shim.js"></script>
-<script src="vendor/eventShim.js"></script>
-<script src="vendor/classList.js"></script>
-<script src="vendor/requestAnimationFrame.js" ></script>
-<script src="vendor/screenfull.min.js" ></script>
-<script src="vendor/marzipano.js" ></script>
-<script src="data.js"></script>
-<script src="index.js"></script>
+        <div id="titleBar">
+            <h1 class="sceneName"></h1>
+        </div>
 
-{# <script src="./app.js"></script> #}
+        <a href="javascript:void(0)" id="autorotateToggle">
+            <img class="icon off" src="img/play.png">
+            <img class="icon on" src="img/pause.png">
+        </a>
 
+        <a href="javascript:void(0)" id="fullscreenToggle">
+            <img class="icon off" src="img/fullscreen.png">
+            <img class="icon on" src="img/windowed.png">
+        </a>
 
+        <a href="javascript:void(0)" id="sceneListToggle">
+            <img class="icon off" src="img/expand.png">
+            <img class="icon on" src="img/collapse.png">
+        </a>
 
+        <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+            <img class="icon" src="img/up.png">
+        </a>
+        <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+            <img class="icon" src="img/down.png">
+        </a>
+        <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+            <img class="icon" src="img/left.png">
+        </a>
+        <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+            <img class="icon" src="img/right.png">
+        </a>
+        <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+            <img class="icon" src="img/plus.png">
+        </a>
+        <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+            <img class="icon" src="img/minus.png">
+        </a>
+
+    </div>
+
+    <script>
+    window.vt_env = "{{env}}";
+    </script>
+
+   <script src="{{path}}app.js"></script>

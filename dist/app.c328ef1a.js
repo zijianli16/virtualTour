@@ -26431,7 +26431,7 @@ var viewerOpts = {
 var viewer = new _marzipano.default.Viewer(panoElement, viewerOpts); // Create scenes.
 
 var scenes = data.scenes.map(function (data) {
-  var urlPrefix = "tiles";
+  var urlPrefix = window.vt_env === "prod" ? "https://" : "tiles";
 
   var source = _marzipano.default.ImageUrlSource.fromString(urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg", {
     cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg"
@@ -26762,7 +26762,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64723" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49373" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
