@@ -1,4 +1,4 @@
-var APP_DATA = {
+export default {
   "scenes": [
     {
       "id": "0-room01_dirts",
