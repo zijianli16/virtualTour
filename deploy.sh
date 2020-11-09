@@ -37,7 +37,7 @@ PROJECT_FOLDER="./dist"
 gsutil -m rsync -r $PROJECT_FOLDER "$CDN_SPACE/$PROJECT_SLUG"
 
 for filename in $(cd $PROJECT_FOLDER && find *); do
-	echo "$CDN_PATH/$PROJECT_SLUG/$filename" 
+	# echo "$CDN_PATH/$PROJECT_SLUG/$filename" 
 	curl -X PURGE "$CDN_PATH/$PROJECT_SLUG/$filename" &
 done
 
