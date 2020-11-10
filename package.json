@@ -7,7 +7,7 @@
     "deploy": "npm run build && ./deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENV='dev' npx parcel index.njk",
-    "build": "ENV='prod' npx parcel build embed.njk --public-url https://www.gannett-cdn.com/labs/dev/virtualTour/"
+    "build": "ENV='prod' npx parcel build embed.njk index.njk --public-url https://www.gannett-cdn.com/labs/dev/virtualTour/"
   },
   "repository": {
     "type": "git",
