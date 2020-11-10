@@ -1,5 +1,10 @@
 .DS_Store
 
+# NUNJUCKS / PARCEL
+dist/*.css
+dist/*.js
+dist/*.map
+
 # Logs
 logs
 *.log
