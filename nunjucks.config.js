@@ -5,6 +5,6 @@ module.exports = {
        name: "virtualtour",
        env: process.env.ENV || "dev",
        author: "",
-       path: (process.env.ENV === 'prod')? "https://www.gannett-cdn.com/usat-storytelling/storytelling-studio-apps/" :  "/"
+       path: (process.env.ENV === 'prod')? "https://www.gannett-cdn.com/labs/dev/virtualTour/" :  "/"
     }
 }

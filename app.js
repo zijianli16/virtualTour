@@ -45,7 +45,8 @@ console.log(APP_DATA);
   // Viewer options.
   var viewerOpts = {
     controls: {
-      mouseViewMode: data.settings.mouseViewMode
+      mouseViewMode: data.settings.mouseViewMode,
+      scrollZoom: false
     }
   };
 
@@ -54,7 +55,7 @@ console.log(APP_DATA);
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
-    var urlPrefix = (window.vt_env === "prod")? "https://":"tiles";
+    var urlPrefix = (window.vt_env === "prod")? "https://www.gannett-cdn.com/labs/dev/virtualTour/tiles":"tiles";
     var source = Marzipano.ImageUrlSource.fromString(
       urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg",
       { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
