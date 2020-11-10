@@ -160,7 +160,7 @@ controls.registerMethod("inElement", new Marzipano.ElementPressControlMethod(vie
 controls.registerMethod("outElement", new Marzipano.ElementPressControlMethod(viewOutElement, "zoom", velocity, friction), true);
 
 function sanitize(s) {
-  return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+  return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace(/_/g," ");
 }
 
 function switchScene(scene) {
