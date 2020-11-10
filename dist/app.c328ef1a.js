@@ -26384,27 +26384,27 @@ var _data = _interopRequireDefault(require("./data"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-'use strict';
+"use strict";
 
 console.log(_data.default);
 var data = _data.default; // Grab elements from DOM.
 
-var panoElement = document.querySelector('#pano');
-var sceneNameElement = document.querySelector('#titleBar .sceneName');
-var sceneListElement = document.querySelector('#sceneList');
-var sceneElements = document.querySelectorAll('#sceneList .scene');
-var sceneListToggleElement = document.querySelector('#sceneListToggle');
-var autorotateToggleElement = document.querySelector('#autorotateToggle');
-var fullscreenToggleElement = document.querySelector('#fullscreenToggle'); // Detect desktop or mobile mode.
+var panoElement = document.querySelector("#pano");
+var sceneNameElement = document.querySelector("#titleBar .sceneName");
+var sceneListElement = document.querySelector("#sceneList");
+var sceneElements = document.querySelectorAll("#sceneList .scene");
+var sceneListToggleElement = document.querySelector("#sceneListToggle");
+var autorotateToggleElement = document.querySelector("#autorotateToggle");
+var fullscreenToggleElement = document.querySelector("#fullscreenToggle"); // Detect desktop or mobile mode.
 
 if (window.matchMedia) {
   var setMode = function setMode() {
     if (mql.matches) {
-      document.body.classList.remove('desktop');
-      document.body.classList.add('mobile');
+      document.body.classList.remove("desktop");
+      document.body.classList.add("mobile");
     } else {
-      document.body.classList.remove('mobile');
-      document.body.classList.add('desktop');
+      document.body.classList.remove("mobile");
+      document.body.classList.add("desktop");
     }
   };
 
@@ -26412,14 +26412,14 @@ if (window.matchMedia) {
   setMode();
   mql.addListener(setMode);
 } else {
-  document.body.classList.add('desktop');
+  document.body.classList.add("desktop");
 } // Detect whether we are on a touch device.
 
 
-document.body.classList.add('no-touch');
-window.addEventListener('touchstart', function () {
-  document.body.classList.remove('no-touch');
-  document.body.classList.add('touch');
+document.body.classList.add("no-touch");
+window.addEventListener("touchstart", function () {
+  document.body.classList.remove("no-touch");
+  document.body.classList.add("touch");
 }); // Viewer options.
 
 var viewerOpts = {
@@ -26479,68 +26479,68 @@ var autorotate = _marzipano.default.autorotate({
 });
 
 if (data.settings.autorotateEnabled) {
-  autorotateToggleElement.classList.add('enabled');
+  autorotateToggleElement.classList.add("enabled");
 } // Set handler for autorotate toggle.
 
 
-autorotateToggleElement.addEventListener('click', toggleAutorotate); // Set up fullscreen mode, if supported.
+autorotateToggleElement.addEventListener("click", toggleAutorotate); // Set up fullscreen mode, if supported.
 
 if (_screenfull.default.enabled && data.settings.fullscreenButton) {
-  document.body.classList.add('fullscreen-enabled');
-  fullscreenToggleElement.addEventListener('click', function () {
+  document.body.classList.add("fullscreen-enabled");
+  fullscreenToggleElement.addEventListener("click", function () {
     _screenfull.default.toggle();
   });
 
-  _screenfull.default.on('change', function () {
+  _screenfull.default.on("change", function () {
     if (_screenfull.default.isFullscreen) {
-      fullscreenToggleElement.classList.add('enabled');
+      fullscreenToggleElement.classList.add("enabled");
     } else {
-      fullscreenToggleElement.classList.remove('enabled');
+      fullscreenToggleElement.classList.remove("enabled");
     }
   });
 } else {
-  document.body.classList.add('fullscreen-disabled');
+  document.body.classList.add("fullscreen-disabled");
 } // Set handler for scene list toggle.
 
 
-sceneListToggleElement.addEventListener('click', toggleSceneList); // Start with the scene list open on desktop.
+sceneListToggleElement.addEventListener("click", toggleSceneList); // Start with the scene list open on desktop.
 
-if (!document.body.classList.contains('mobile')) {
+if (!document.body.classList.contains("mobile")) {
   showSceneList();
 } // Set handler for scene switch.
 
 
 scenes.forEach(function (scene) {
   var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
-  el.addEventListener('click', function () {
+  el.addEventListener("click", function () {
     switchScene(scene); // On mobile, hide scene list after selecting a scene.
 
-    if (document.body.classList.contains('mobile')) {
+    if (document.body.classList.contains("mobile")) {
       hideSceneList();
     }
   });
 }); // DOM elements for view controls.
 
-var viewUpElement = document.querySelector('#viewUp');
-var viewDownElement = document.querySelector('#viewDown');
-var viewLeftElement = document.querySelector('#viewLeft');
-var viewRightElement = document.querySelector('#viewRight');
-var viewInElement = document.querySelector('#viewIn');
-var viewOutElement = document.querySelector('#viewOut'); // Dynamic parameters for controls.
+var viewUpElement = document.querySelector("#viewUp");
+var viewDownElement = document.querySelector("#viewDown");
+var viewLeftElement = document.querySelector("#viewLeft");
+var viewRightElement = document.querySelector("#viewRight");
+var viewInElement = document.querySelector("#viewIn");
+var viewOutElement = document.querySelector("#viewOut"); // Dynamic parameters for controls.
 
 var velocity = 0.7;
 var friction = 3; // Associate view controls with elements.
 
 var controls = viewer.controls();
-controls.registerMethod('upElement', new _marzipano.default.ElementPressControlMethod(viewUpElement, 'y', -velocity, friction), true);
-controls.registerMethod('downElement', new _marzipano.default.ElementPressControlMethod(viewDownElement, 'y', velocity, friction), true);
-controls.registerMethod('leftElement', new _marzipano.default.ElementPressControlMethod(viewLeftElement, 'x', -velocity, friction), true);
-controls.registerMethod('rightElement', new _marzipano.default.ElementPressControlMethod(viewRightElement, 'x', velocity, friction), true);
-controls.registerMethod('inElement', new _marzipano.default.ElementPressControlMethod(viewInElement, 'zoom', -velocity, friction), true);
-controls.registerMethod('outElement', new _marzipano.default.ElementPressControlMethod(viewOutElement, 'zoom', velocity, friction), true);
+controls.registerMethod("upElement", new _marzipano.default.ElementPressControlMethod(viewUpElement, "y", -velocity, friction), true);
+controls.registerMethod("downElement", new _marzipano.default.ElementPressControlMethod(viewDownElement, "y", velocity, friction), true);
+controls.registerMethod("leftElement", new _marzipano.default.ElementPressControlMethod(viewLeftElement, "x", -velocity, friction), true);
+controls.registerMethod("rightElement", new _marzipano.default.ElementPressControlMethod(viewRightElement, "x", velocity, friction), true);
+controls.registerMethod("inElement", new _marzipano.default.ElementPressControlMethod(viewInElement, "zoom", -velocity, friction), true);
+controls.registerMethod("outElement", new _marzipano.default.ElementPressControlMethod(viewOutElement, "zoom", velocity, friction), true);
 
 function sanitize(s) {
-  return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+  return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
 }
 
 function switchScene(scene) {
@@ -26560,31 +26560,31 @@ function updateSceneList(scene) {
   for (var i = 0; i < sceneElements.length; i++) {
     var el = sceneElements[i];
 
-    if (el.getAttribute('data-id') === scene.data.id) {
-      el.classList.add('current');
+    if (el.getAttribute("data-id") === scene.data.id) {
+      el.classList.add("current");
     } else {
-      el.classList.remove('current');
+      el.classList.remove("current");
     }
   }
 }
 
 function showSceneList() {
-  sceneListElement.classList.add('enabled');
-  sceneListToggleElement.classList.add('enabled');
+  sceneListElement.classList.add("enabled");
+  sceneListToggleElement.classList.add("enabled");
 }
 
 function hideSceneList() {
-  sceneListElement.classList.remove('enabled');
-  sceneListToggleElement.classList.remove('enabled');
+  sceneListElement.classList.remove("enabled");
+  sceneListToggleElement.classList.remove("enabled");
 }
 
 function toggleSceneList() {
-  sceneListElement.classList.toggle('enabled');
-  sceneListToggleElement.classList.toggle('enabled');
+  sceneListElement.classList.toggle("enabled");
+  sceneListToggleElement.classList.toggle("enabled");
 }
 
 function startAutorotate() {
-  if (!autorotateToggleElement.classList.contains('enabled')) {
+  if (!autorotateToggleElement.classList.contains("enabled")) {
     return;
   }
 
@@ -26598,43 +26598,43 @@ function stopAutorotate() {
 }
 
 function toggleAutorotate() {
-  if (autorotateToggleElement.classList.contains('enabled')) {
-    autorotateToggleElement.classList.remove('enabled');
+  if (autorotateToggleElement.classList.contains("enabled")) {
+    autorotateToggleElement.classList.remove("enabled");
     stopAutorotate();
   } else {
-    autorotateToggleElement.classList.add('enabled');
+    autorotateToggleElement.classList.add("enabled");
     startAutorotate();
   }
 }
 
 function createLinkHotspotElement(hotspot) {
   // Create wrapper element to hold icon and tooltip.
-  var wrapper = document.createElement('div');
-  wrapper.classList.add('hotspot');
-  wrapper.classList.add('link-hotspot'); // Create image element.
+  var wrapper = document.createElement("div");
+  wrapper.classList.add("hotspot");
+  wrapper.classList.add("link-hotspot"); // Create image element.
 
-  var icon = document.createElement('img');
-  icon.src = 'img/link.png';
-  icon.classList.add('link-hotspot-icon'); // Set rotation transform.
+  var icon = document.createElement("img");
+  icon.src = "img/link.png";
+  icon.classList.add("link-hotspot-icon"); // Set rotation transform.
 
-  var transformProperties = ['-ms-transform', '-webkit-transform', 'transform'];
+  var transformProperties = ["-ms-transform", "-webkit-transform", "transform"];
 
   for (var i = 0; i < transformProperties.length; i++) {
     var property = transformProperties[i];
-    icon.style[property] = 'rotate(' + hotspot.rotation + 'rad)';
+    icon.style[property] = "rotate(" + hotspot.rotation + "rad)";
   } // Add click event handler.
 
 
-  wrapper.addEventListener('click', function () {
+  wrapper.addEventListener("click", function () {
     switchScene(findSceneById(hotspot.target));
   }); // Prevent touch and scroll events from reaching the parent element.
   // This prevents the view control logic from interfering with the hotspot.
 
   stopTouchAndScrollEventPropagation(wrapper); // Create tooltip element.
 
-  var tooltip = document.createElement('div');
-  tooltip.classList.add('hotspot-tooltip');
-  tooltip.classList.add('link-hotspot-tooltip');
+  var tooltip = document.createElement("div");
+  tooltip.classList.add("hotspot-tooltip");
+  tooltip.classList.add("link-hotspot-tooltip");
   tooltip.innerHTML = findSceneDataById(hotspot.target).name;
   wrapper.appendChild(icon);
   wrapper.appendChild(tooltip);
@@ -26643,59 +26643,60 @@ function createLinkHotspotElement(hotspot) {
 
 function createInfoHotspotElement(hotspot) {
   // Create wrapper element to hold icon and tooltip.
-  var wrapper = document.createElement('div');
-  wrapper.classList.add('hotspot');
-  wrapper.classList.add('info-hotspot'); // Create hotspot/tooltip header.
+  var wrapper = document.createElement("div");
+  wrapper.classList.add("hotspot");
+  wrapper.classList.add("info-hotspot"); // Create hotspot/tooltip header.
 
-  var header = document.createElement('div');
-  header.classList.add('info-hotspot-header'); // Create image element.
+  var header = document.createElement("div");
+  header.classList.add("info-hotspot-header"); // Create image element.
 
-  var iconWrapper = document.createElement('div');
-  iconWrapper.classList.add('info-hotspot-icon-wrapper');
-  var icon = document.createElement('img');
-  icon.src = 'img/info.png';
-  icon.classList.add('info-hotspot-icon');
+  var iconWrapper = document.createElement("div");
+  iconWrapper.classList.add("info-hotspot-icon-wrapper");
+  var icon = document.createElement("img");
+  icon.src = "img/info.png";
+  icon.classList.add("info-hotspot-icon");
   iconWrapper.appendChild(icon); // Create title element.
 
-  var titleWrapper = document.createElement('div');
-  titleWrapper.classList.add('info-hotspot-title-wrapper');
-  var title = document.createElement('div');
-  title.classList.add('info-hotspot-title');
+  var titleWrapper = document.createElement("div");
+  titleWrapper.classList.add("info-hotspot-title-wrapper");
+  var title = document.createElement("div");
+  title.classList.add("info-hotspot-title");
   title.innerHTML = hotspot.title;
   titleWrapper.appendChild(title); // Create close element.
 
-  var closeWrapper = document.createElement('div');
-  closeWrapper.classList.add('info-hotspot-close-wrapper');
-  var closeIcon = document.createElement('img');
-  closeIcon.src = 'img/close.png';
-  closeIcon.classList.add('info-hotspot-close-icon');
+  var closeWrapper = document.createElement("div");
+  closeWrapper.classList.add("info-hotspot-close-wrapper");
+  var closeIcon = document.createElement("img");
+  closeIcon.src = "img/close.png";
+  closeIcon.classList.add("info-hotspot-close-icon");
   closeWrapper.appendChild(closeIcon); // Construct header element.
 
   header.appendChild(iconWrapper);
   header.appendChild(titleWrapper);
   header.appendChild(closeWrapper); // Create text element.
 
-  var text = document.createElement('div');
-  text.classList.add('info-hotspot-text');
+  var text = document.createElement("div");
+  text.classList.add("info-hotspot-text");
   text.innerHTML = hotspot.text; // Place header and text into wrapper element.
 
   wrapper.appendChild(header);
   wrapper.appendChild(text); // Create a modal for the hotspot content to appear on mobile mode.
 
-  var modal = document.createElement('div');
+  var embedWrapper = document.querySelector("#virtual-tour-container");
+  var modal = document.createElement("div");
   modal.innerHTML = wrapper.innerHTML;
-  modal.classList.add('info-hotspot-modal');
-  document.body.appendChild(modal);
+  modal.classList.add("info-hotspot-modal");
+  embedWrapper.appendChild(modal);
 
   var toggle = function toggle() {
-    wrapper.classList.toggle('visible');
-    modal.classList.toggle('visible');
+    wrapper.classList.toggle("visible");
+    modal.classList.toggle("visible");
   }; // Show content when hotspot is clicked.
 
 
-  wrapper.querySelector('.info-hotspot-header').addEventListener('click', toggle); // Hide content when close icon is clicked.
+  wrapper.querySelector(".info-hotspot-header").addEventListener("click", toggle); // Hide content when close icon is clicked.
 
-  modal.querySelector('.info-hotspot-close-wrapper').addEventListener('click', toggle); // Prevent touch and scroll events from reaching the parent element.
+  modal.querySelector(".info-hotspot-close-wrapper").addEventListener("click", toggle); // Prevent touch and scroll events from reaching the parent element.
   // This prevents the view control logic from interfering with the hotspot.
 
   stopTouchAndScrollEventPropagation(wrapper);
@@ -26704,7 +26705,7 @@ function createInfoHotspotElement(hotspot) {
 
 
 function stopTouchAndScrollEventPropagation(element, eventList) {
-  var eventList = ['touchstart', 'touchmove', 'touchend', 'touchcancel', 'wheel', 'mousewheel'];
+  var eventList = ["touchstart", "touchmove", "touchend", "touchcancel", "wheel", "mousewheel"];
 
   for (var i = 0; i < eventList.length; i++) {
     element.addEventListener(eventList[i], function (event) {
@@ -26763,7 +26764,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53016" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59870" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
