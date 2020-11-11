@@ -4,7 +4,8 @@ import APP_DATA from "./data";
 
 ("use strict");
 
-console.log(APP_DATA);
+var urlPrefix = window.vt_env === "prod" ? "https://www.gannett-cdn.com/labs/dev/virtualTour/" : "/";
+
 
 var data = APP_DATA;
 
@@ -55,8 +56,7 @@ var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
 // Create scenes.
 var scenes = data.scenes.map(function (data) {
-  var urlPrefix = window.vt_env === "prod" ? "https://www.gannett-cdn.com/labs/dev/virtualTour/tiles" : "tiles";
-  var source = Marzipano.ImageUrlSource.fromString(urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg", { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
+  var source = Marzipano.ImageUrlSource.fromString(urlPrefix + "tiles/" + data.id + "/{z}/{f}/{y}/{x}.jpg", { cubeMapPreviewUrl: urlPrefix + data.id + "/preview.jpg" });
   var geometry = new Marzipano.CubeGeometry(data.levels);
 
   var limiter = Marzipano.RectilinearView.limit.traditional(data.faceSize, (100 * Math.PI) / 180, (120 * Math.PI) / 180);
@@ -160,7 +160,7 @@ controls.registerMethod("inElement", new Marzipano.ElementPressControlMethod(vie
 controls.registerMethod("outElement", new Marzipano.ElementPressControlMethod(viewOutElement, "zoom", velocity, friction), true);
 
 function sanitize(s) {
-  return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+  return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace(/_/g," ");
 }
 
 function switchScene(scene) {
@@ -233,7 +233,7 @@ function createLinkHotspotElement(hotspot) {
 
   // Create image element.
   var icon = document.createElement("img");
-  icon.src = "img/link.png";
+  icon.src = urlPrefix+"img/link.png";
   icon.classList.add("link-hotspot-icon");
 
   // Set rotation transform.
@@ -278,7 +278,7 @@ function createInfoHotspotElement(hotspot) {
   var iconWrapper = document.createElement("div");
   iconWrapper.classList.add("info-hotspot-icon-wrapper");
   var icon = document.createElement("img");
-  icon.src = "img/info.png";
+  icon.src = urlPrefix+"img/info.png";
   icon.classList.add("info-hotspot-icon");
   iconWrapper.appendChild(icon);
 
@@ -294,7 +294,7 @@ function createInfoHotspotElement(hotspot) {
   var closeWrapper = document.createElement("div");
   closeWrapper.classList.add("info-hotspot-close-wrapper");
   var closeIcon = document.createElement("img");
-  closeIcon.src = "img/close.png";
+  closeIcon.src = urlPrefix+"img/close.png";
   closeIcon.classList.add("info-hotspot-close-icon");
   closeWrapper.appendChild(closeIcon);
 
