@@ -3,7 +3,9 @@
 # NUNJUCKS / PARCEL
 dist/*.css
 dist/*.js
-dist/*.map
+dist/*.map 
+dist/*.html
+dist/*.png
 
 # Logs
 logs
