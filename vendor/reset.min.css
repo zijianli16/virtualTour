@@ -1,2 +1,123 @@
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+#virtual-tour-container html,
+#virtual-tour-container body,
+#virtual-tour-container div,
+#virtual-tour-container span,
+#virtual-tour-container applet,
+#virtual-tour-container object,
+#virtual-tour-container iframe,
+#virtual-tour-container h1,
+#virtual-tour-container h2,
+#virtual-tour-container h3,
+#virtual-tour-container h4,
+#virtual-tour-container h5,
+#virtual-tour-container h6,
+#virtual-tour-container p,
+#virtual-tour-container blockquote,
+#virtual-tour-container pre,
+#virtual-tour-container a,
+#virtual-tour-container abbr,
+#virtual-tour-container acronym,
+#virtual-tour-container address,
+#virtual-tour-container big,
+#virtual-tour-container cite,
+#virtual-tour-container code,
+#virtual-tour-container del,
+#virtual-tour-container dfn,
+#virtual-tour-container em,
+#virtual-tour-container img,
+#virtual-tour-container ins,
+#virtual-tour-container kbd,
+#virtual-tour-container q,
+#virtual-tour-container s,
+#virtual-tour-container samp,
+#virtual-tour-container small,
+#virtual-tour-container strike,
+#virtual-tour-container strong,
+#virtual-tour-container sub,
+#virtual-tour-container sup,
+#virtual-tour-container tt,
+#virtual-tour-container var,
+#virtual-tour-container b,
+#virtual-tour-container u,
+#virtual-tour-container i,
+#virtual-tour-container center,
+#virtual-tour-container dl,
+#virtual-tour-container dt,
+#virtual-tour-container dd,
+#virtual-tour-container ol,
+#virtual-tour-container ul,
+#virtual-tour-container li,
+#virtual-tour-container fieldset,
+#virtual-tour-container form,
+#virtual-tour-container label,
+#virtual-tour-container legend,
+#virtual-tour-container table,
+#virtual-tour-container caption,
+#virtual-tour-container tbody,
+#virtual-tour-container tfoot,
+#virtual-tour-container thead,
+#virtual-tour-container tr,
+#virtual-tour-container th,
+#virtual-tour-container td,
+#virtual-tour-container article,
+#virtual-tour-container aside,
+#virtual-tour-container canvas,
+#virtual-tour-container details,
+#virtual-tour-container embed,
+#virtual-tour-container figure,
+#virtual-tour-container figcaption,
+#virtual-tour-container footer,
+#virtual-tour-container header,
+#virtual-tour-container hgroup,
+#virtual-tour-container menu,
+#virtual-tour-container nav,
+#virtual-tour-container output,
+#virtual-tour-container ruby,
+#virtual-tour-container section,
+#virtual-tour-container summary,
+#virtual-tour-container time,
+#virtual-tour-container mark,
+#virtual-tour-container audio,
+#virtual-tour-container video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+#virtual-tour-container article,
+#virtual-tour-container aside,
+#virtual-tour-container details,
+#virtual-tour-container figcaption,
+#virtual-tour-container figure,
+#virtual-tour-container footer,
+#virtual-tour-container header,
+#virtual-tour-container hgroup,
+#virtual-tour-container menu,
+#virtual-tour-container nav,
+#virtual-tour-container section {
+  display: block;
+}
+#virtual-tour-container body {
+  line-height: 1;
+}
+#virtual-tour-container ol,
+#virtual-tour-container ul {
+  list-style: none;
+}
+#virtual-tour-container blockquote,
+#virtual-tour-container q {
+  quotes: none;
+}
+#virtual-tour-container blockquote:before,
+#virtual-tour-container blockquote:after,
+#virtual-tour-container q:before,
+#virtual-tour-container q:after {
+  content: none;
+}
+#virtual-tour-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
