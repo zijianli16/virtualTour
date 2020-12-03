@@ -3,6 +3,7 @@ export default {
     {
       "id": "0-room01_dirts",
       "name": "Room01_Dirts",
+      "displayname": "Mobile Lab",
       "levels": [
         {
           "tileSize": 256,
@@ -41,19 +42,20 @@ export default {
           "yaw": -1.8375627043111997,
           "pitch": 0.6321191402371689,
           "title": "Testing samples",
-          "text": "Researchers put soil samples into tubes to see whether or not the biocrust has cyanobacteria. If there is cyanobacteria, the liquid will turn green."
+          "text": "Researchers put soil samples into tubes to see whether the biocrust has cyanobacteria. If there is cyanobacteria, the liquid will turn green."
         },
         {
           "yaw": 0.25462472801176617,
           "pitch": 0.2555230379233624,
           "title": "Inspecting samples",
-          "text": "Researchers look at samples of biocrust under a microscope to see what types of cyanobacteria are in the soil, or to check the health of the biocrust."
+          "text": "Researchers look at samples of biocrust under a microscope to see what types of cyanobacteria are in the soil or to check the health of the biocrust."
         }
       ]
     },
     {
       "id": "1-room01_samples",
       "name": "Room01_Samples",
+      "displayname": "Mobile lab, view of samples",
       "levels": [
         {
           "tileSize": 256,
@@ -105,6 +107,7 @@ export default {
     {
       "id": "2-room01_sink",
       "name": "Room01_Sink",
+      "displayname": "Mobile lab, sink view",
       "levels": [
         {
           "tileSize": 256,
@@ -156,6 +159,7 @@ export default {
     {
       "id": "3-room02_operationside",
       "name": "Room02_operationSide",
+      "displayname": "Incubation lab",
       "levels": [
         {
           "tileSize": 256,
@@ -194,7 +198,7 @@ export default {
           "yaw": -0.5922032668596984,
           "pitch": 0.4203452605979212,
           "title": "Growing cyanobacteria",
-          "text": "<div>Researchers grow tiny biocrust organisms in either petri dishes or in flasks. They are trying to grow as much as they can so that they can restore large areas of land.<br></div>"
+          "text": "<div>This machine shakes flasks full of green cyanobacteria to help it grow. Cyanobacteria is one of the most important parts of biocrust.<br></div>"
         },
         {
           "yaw": -2.715701200233486,
@@ -207,6 +211,7 @@ export default {
     {
       "id": "4-room02_rightside",
       "name": "Room02_rightSide",
+      "displayname": "Incubation lab, second view",
       "levels": [
         {
           "tileSize": 256,

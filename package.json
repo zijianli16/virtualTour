@@ -4,10 +4,10 @@
   "description": "Demo Link: https://zijianli16.github.io/virtualTour/index.html",
   "main": "index.js",
   "scripts": {
-    "deploy": "npm run build && ./deploy.sh",
+    "deploy": "npm run build && ./deploy.sh --production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENV='dev' npx parcel index.njk",
-    "build": "ENV='prod' npx parcel build embed.njk index.njk --public-url https://www.gannett-cdn.com/labs/dev/virtualTour/"
+    "build": "ENV='prod' npx parcel build embed.njk index.njk --public-url https://www.gannett-cdn.com/labs/master/virtualTour/"
   },
   "repository": {
     "type": "git",

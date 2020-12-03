@@ -164,6 +164,7 @@ function sanitize(s) {
 }
 
 function switchScene(scene) {
+  console.log(scene)
   stopAutorotate();
   scene.view.setParameters(scene.data.initialViewParameters);
   scene.scene.switchTo();
@@ -171,9 +172,9 @@ function switchScene(scene) {
   updateSceneName(scene);
   updateSceneList(scene);
 }
-
+// document.querySelectorAll("#sceneList li")[0].innerText
 function updateSceneName(scene) {
-  sceneNameElement.innerHTML = sanitize(scene.data.name);
+  sceneNameElement.innerHTML = sanitize(scene.data.displayname);
 }
 
 function updateSceneList(scene) {
