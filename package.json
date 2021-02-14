@@ -1,0 +1,29 @@
+{
+  "name": "virtualtour",
+  "version": "1.0.0",
+  "description": "Demo Link: https://zijianli16.github.io/virtualTour/index.html",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run build && ./deploy.sh --production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ENV='dev' npx parcel index.njk",
+    "build": "ENV='prod' npx parcel build embed.njk index.njk --public-url https://www.gannett-cdn.com/labs/master/virtualTour/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zijianli16/virtualTour.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zijianli16/virtualTour/issues"
+  },
+  "homepage": "https://github.com/zijianli16/virtualTour#readme",
+  "devDependencies": {
+    "marzipano": "^0.9.1",
+    "nunjucks": "^3.2.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nunjucks": "^2.2.2",
+    "screenfull": "^5.0.2"
+  }
+}
